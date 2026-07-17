@@ -144,7 +144,7 @@ export default function App() {
     setLenderMap({});
     setCreditNote(null);
     try {
-      const data = await call(`/search?query=${encodeURIComponent(query.trim())}&entityType=company&perPage=8`);
+      const data = await call(`/search?query=${encodeURIComponent(query.trim())}`);
       const results = data?.results || data?.companies || data?.items || [];
       setSearchResults(results);
       if (results.length === 0) setSearchError({ message: "No companies found for that query.", status: null, raw: null });
